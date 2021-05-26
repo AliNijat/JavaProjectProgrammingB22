@@ -40,7 +40,7 @@ public class RemoveDuplicate {
         list.removeIf(e -> Collections.frequency(list, e) > 1);
         return list;
 
-        // i added this to
+        // i added this to hi
         // I new commit
     }
 }
