@@ -1,0 +1,1292 @@
+=======================================================
+    Ternary
+=======================================================
+
+[Eligible to get Loan]
+
+Given two values: yearly salary and credit score determine if you can get a loan.
+
+    To be approve for the loan, print: "Loan Approved":
+        Salary: above 60,000
+        Credit Score: above 650
+    Otherwise print: "Loan Denied"
+
+=======================================================
+
+[Sport]
+
+Given a sport you play at the community center you will have to pay some enterance fee.
+
+    Soccer or Tennis fee is: 100
+    Otherwise fee is: 50
+
+=======================================================
+Nested If statements
+=======================================================
+
+In Cybertek we have three batch types: US morning, US evening, EU.
+Depending on a batch type (String) print information about the batch.
+
+First figure out is is a US batch or EU batch
+
+    - for US batches:
+
+        > Figure out is it a morning batch or evening batch
+            > morning - print: Class times are 10-5 EST. M, T, Th, F.
+            > evening - print: Class times are 7-10 EST. M, T, W, Th, S, S
+
+    - for EU batches:
+
+        > print: Class times are  10-5 EST. M, T, W, Th, F.
+
+
+=======================================================
+
+Write a program that can define the age groups of a person.
+
+Have a pre-condition(Outer if): if age > 120 or less than 0 ==> invalid entry, and nothing else is checked.
+
+Age groups:
+Infant (< 1 year), Toddler (3 - 5), Kid (6 - 9), Pre-Teen (10 - 12), Teenager (13 - 17), Young Adult (18 - 20), Adult (21 - 39), Young Middle-Aged Adult (40 - 49), Middle-Aged Adult (50 - 54), Very Young Senior Citizen (55 - 64), Young Senior Citizen (65 - 74), Senior Citizen (75 - 84), Old Senior Citizen (85+)
+
+Based on the given age find and print which age group they are in.
+
+=======================================================
+[EligibleToVote]
+
+Redo the EligibleToVote task but this time ask which country the person has citizenship for
+
+If the citizenship is for the USA then ask user to enter their age. Use the age to figure out if they vote.
+
+    -> 18+ : You are eligible to vote
+    -> < 18: You must be at least 18 years old to vote
+
+If the person is not a USA citizen: You must be US citizen in order to vote"
+=======================================================
+Switch
+=======================================================
+
+[Field Trip]
+
+Your school goes on a Field trip each year. The place you go will be based on your grade. Given some grade number (1-6) figure out the details of your field trip. Print the information at the end.
+
+    Data based on grade:
+
+        grade - 1
+        location -  Apple orchard
+        number of groups - 3
+        teacher in charge - Ms. Smith
+
+        grade - 2
+        location - Zoo
+        number of groups - 7
+        teacher in charge - Mr. Lee
+
+        grade - 3
+        location - Aquarium
+        number of groups - 5
+        teacher in charge - Ms. Wilson
+
+        grade - 4
+        location - Movie theater
+        number of groups - 2
+        teacher in charge - Ms. Reyes
+
+        grade - 5
+        location - Museum
+        number of groups - 5
+        teacher in charge - Ms. Lela
+
+        grade - 6
+        location - Six Flags
+        number of groups - 8
+        teacher in charge - Mr. Watt
+
+
+=======================================================
+
+import java.util.Scanner;
+
+public class BakingContest {
+
+    /*
+    [Baking contest]
+
+You are in a baking contest. Your cookies will be rated by 3 judges. The 3 scores from the judges will be averaged and compared with the 2 other people in the contest.
+
+Use variables: judge score 1, judge score 2, judge score 3, other person score 1, other persons score 2
+
+If your score is more than both of the other people then print "First place!"
+If your score is more then one other person then print "Second place"
+If your score is less than both of the other people then print "Third place"
+     */
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int judge = 1;
+        System.out.println("Enter judge " + judge++ + " score");
+        int scoreOne = input.nextInt();
+        System.out.println("Enter judge " + judge++ + " score");
+        int scoreTwo = input.nextInt();
+        System.out.println("Enter judge " + judge++ + " score");
+        int scoreThree = input.nextInt();
+        System.out.println("Enter other person 1's score");
+        int otherPerson1 = input.nextInt();
+        System.out.println("Enter other person 2's score");
+        int otherPerson2 = input.nextInt();
+
+        int ourAverageScore = (scoreOne + scoreTwo + scoreThree) / 3;
+
+        if(ourAverageScore > otherPerson1 && ourAverageScore > otherPerson2) {
+            System.out.println("First place");
+        } else if( (ourAverageScore > otherPerson1 && ourAverageScore < otherPerson2) || (ourAverageScore < otherPerson1 && ourAverageScore > otherPerson2) ){
+            System.out.println("Second place");
+        } else {
+            System.out.println("Third place");
+        }
+
+    }
+
+}
+===================================================================================================================
+package OfficeHours.Practice_03_16_2021;
+
+public class ExamplesIf {
+    public static void main(String[] args) {
+
+        int a = 10; // a = 8
+        int b = a-- * 2 - --a % 2 + a;
+        //      10  * 2 - 8 % 2 + 8
+        //      20 - 8 % 2 + 8
+        //      20 - 0 + 8
+        //      20 + 8
+        //      28
+        System.out.println(b);
+
+        // Remainder
+
+        // 8 % 2  = 0
+        // 8/2 = 4
+
+        // 9 % 2 ==  1
+        // 9/2 => 2 + 2 + 2 + 2 == 8
+
+        // even and odd
+
+        if(11 % 2 == 0) {
+            System.out.println("Even");
+        }else {
+            System.out.println("Odd");
+        }
+
+        // 2 % 7 = 2
+        // 7 % 2 = 1
+       // System.out.println(-2%7);
+    }
+}
+===================================================================================================================
+public class BMI {
+
+    /*
+
+BMI: Program will ask user to enter their mass (kilogram) and their height (meters). Calculate their BMI and then print the appropriate message based on the provided values: All numbers taken as doubles
+—> BMI Formula: BMI = mass / height^2
+—> Values:
+Less than 18.5 — Underweight
+From 18.5 to 25 — Normal weight
+From 25 to 30 — Overweight
+More than or equal to 30 — Obese
+
+     */
+
+    public static void main(String[] args) {
+
+        double mass = 62.4;
+        double height = 1.65;
+        double BMI = mass / (height * height);
+
+        if(BMI < 18.5){
+            System.out.println("Underweight");
+        } else if(BMI >= 18.5 && BMI < 25 ) { // Can you do this: 18.5 <= BMI <=25
+            System.out.println("Normal Weight");
+        } else if (BMI >= 25 && BMI < 30) {
+            System.out.println("Over Weight");
+        } else {
+            System.out.println("Obese");
+        }
+
+//        else if (BMI >= 30){
+//            System.out.println("Obese");
+//        }
+
+
+
+
+    }
+}
+===========================================
+public class BMI {
+
+    /*
+
+BMI: Program will ask user to enter their mass (kilogram) and their height (meters). Calculate their BMI and then print the appropriate message based on the provided values: All numbers taken as doubles
+—> BMI Formula: BMI = mass / height^2
+—> Values:
+Less than 18.5 — Underweight
+From 18.5 to 25 — Normal weight
+From 25 to 30 — Overweight
+More than or equal to 30 — Obese
+
+     */
+
+    public static void main(String[] args) {
+
+        double mass = 62.4;
+        double height = 1.65;
+        double BMI = mass / (height * height);
+
+        if(BMI < 18.5){
+            System.out.println("Underweight");
+        } else if(BMI >= 18.5 && BMI < 25 ) { // Can you do this: 18.5 <= BMI <=25
+            System.out.println("Normal Weight");
+        } else if (BMI >= 25 && BMI < 30) {
+            System.out.println("Over Weight");
+        } else {
+            System.out.println("Obese");
+        }
+
+//        else if (BMI >= 30){
+//            System.out.println("Obese");
+//        }
+
+
+
+
+    }
+}
+=================================================================================
+=======================================================
+
+[Author] - Look at CappuccinoBuyer from class for an idea
+
+You are an author. You are writing a book and want to figure out some information related to the genre of book you are writing. Given the genre name figure out: average page length, average profit, average number of sequels, average number of countries published in.
+
+Make variables for all of that information. Given empty defaults for all except the neighborhood name. Print the information once at the end.
+
+    Data based on genre:
+
+        genre - Fantasy
+        page length - 500
+        profit - 1,000,000
+        sequels - 5
+        countries - 50
+
+        genre - Detective
+        page length - 350
+        profit - 700,000
+        sequels - 3
+        countries - 45
+
+        genre - Science Fiction
+        page length - 720
+        profit - 900,500
+        sequels - 4
+        countries - 30
+
+        genre - Short Story
+        page length - 150
+        profit - 300,000
+        sequels - 1
+        countries - 40
+
+=======================================================
+=======================================================
+        Switch tasks
+=======================================================
+
+[House Buyer ] - Look at CappuccinoBuyer from class for an idea
+
+You are buying a new house and need to collect information about the houses in a specific area. You will give the neighborhood name and see the average house price, rating of school districts near by(out of 5), if it is a gated community or not, allow pets or not.
+
+Make variables for all of that information. Given empty defaults for all except the neighborhood name. Print the information once at the end.
+
+    Data based on neighborhood name:
+
+        name - Hills
+        average price - 89,000
+        rating - 4.0
+        gated - no
+        allow pets - yes
+
+        name - Oaks
+        average price - 75,000
+        rating - 3.5
+        gated - no
+        allow pets - yes
+
+        name - Highland
+        average price - 150,000
+        rating - 4.5
+        gated - yes
+        allow pets - no
+
+        name - Canyon
+        average price - 201,000
+        rating - 4.8
+        gated - yes
+        allow pets - yes
+
+=======================================================
+
+=======================================================
+        If statement tasks
+=======================================================
+
+[Street light]
+
+You are at a street line. The color of the street line will determine what you should do.
+
+    Green light - Print "Go"
+    Yellow light - Print "Slow down"
+    Red light - Print "Stop"
+
+=======================================================
+
+[Baking contest]
+
+You are in a baking contest. Your cookies will be rated by 3 judges. The 3 scores from the judges will be averaged and compared with the 2 other people in the contest.
+
+Use variables: judge score 1, judge score 2, judge score 3, other person score 1, other persons score 2
+
+If your score is more than both of the other people then print "First place!"
+If your score is more then one other person then print "Second place"
+If your score is less than both of the other people then print "Third place"
+
+=======================================================
+public class GradeRetake {
+
+    /*
+    Write a program that will give the grade after the retake. The program should read a score of the test and which attempt it was.
+
+    If its the first attempt -> subtract 10%
+    If its the second attempt -> subtract 20%
+    If its the third attempt -> subtract 35%
+     */
+
+    public static void main(String[] args) {
+
+        int baseGrade = 90;
+        int numberOfAttempts = 1;
+        int retakePenalty = 0;
+
+//        if(numberOfAttempts == 1) {
+//           retakePenalty = (int)(baseGrade * 0.10);
+//        }
+//        if(numberOfAttempts == 2) {
+//            retakePenalty = (int)(baseGrade * 0.20);
+//        }
+//        if(numberOfAttempts == 3) {
+//            retakePenalty = (int)(baseGrade * 0.35);
+//        }
+
+        if(numberOfAttempts == 1) {
+            retakePenalty = (int)(baseGrade * 0.10);
+        } else if(numberOfAttempts == 2) {
+            retakePenalty = (int)(baseGrade * 0.20);
+        } else if(numberOfAttempts == 3) {
+            retakePenalty = (int)(baseGrade * 0.35);
+        } else{
+            System.out.println("Invalid attempt number");
+        }
+
+        System.out.println("Grade after retake attempt " + numberOfAttempts + " was: " + (baseGrade - retakePenalty));
+
+
+    }
+
+}
+========================================================================
+public class TriangleAngles {
+
+    public static void main(String[] args) {
+
+        /*
+
+    A triangle is valid if the sum of all the three angles is equal to 180 degrees.
+     Write a program that declares three integers as angles and check whether the
+     triangle is valid or not. Print "Valid triangle" or "Not a valid triangle".
+
+         */
+
+        int angleOne = 101;
+        int angleTwo = 30;
+        int angleThree = 50;
+
+//        int sum = angleOne + angleTwo + angleThree;
+//        if(sum == 180) {
+//            System.out.println("Valid triangle");
+//        } else {
+//            System.out.println("Invalid triangle");
+//        }
+
+
+        if((angleOne + angleTwo + angleThree) == 180) {
+            System.out.println("Valid triangle");
+        } else {
+            System.out.println("Invalid triangle");
+        }
+
+        boolean check = (angleOne + angleTwo + angleThree) == 180;
+        if(check) {
+            System.out.println("Valid triangle");
+        } else {
+            System.out.println("Invalid triangle");
+        }
+
+        if((angleOne + angleTwo + angleThree) != 180) {
+            System.out.println("Invalid triangle");
+        } else {
+            System.out.println("Valid triangle");
+        }
+
+    }
+
+}
+===========================================================================================
+Extra practice
+if statement, multibranch if, && and ||
+-------------------------------------------------
+
+Campus time: User enters a time(hour in 24 hour format) and will be able to find out if the campus is open or not
+> Campus is open from 8 am(8) to 11 pm (23)
+> If user enters a time within the open time they should see message : “open” but if the time entered is outside of operating hours they should see: “ closed”
+> If the user enters an invalid hour (negative number or more than 24 hours) they should see an error message: “invalid time”
+
+-------------------------------------------------
+
+BMI: Program will ask user to enter their mass (kilogram) and their height (meters). Calculate their BMI and then print the appropriate message based on the provided values: All numbers taken as doubles
+—> BMI Formula: BMI = mass / height^2
+—> Values:
+Less than 18.5 — Underweight
+From 18.5 to 25 — Normal weight
+From 25 to 30 — Overweight
+More than or equal to 30 — Obese
+
+-------------------------------------------------
+
+Write a java program that accepts three numbers and return the minimum number (assume that none of them are equal)
+
+-------------------------------------------------
+
+Write a program that will ask the user to enter three numbers.
+If the numbers are the same print “All integers are the same”
+If they are not equal, print which is the biggest value of the three numbers
+—> If there is two numbers which are the largest print the one that came first
+> Input: 3,2,6
+> Output: The biggest number from 3, 2 and 6 is: 6
+
+-------------------------------------------------
+
+Write a program that will accept a number representing the month. Print out how many days are in that given month. Assume February (2) has 28 days
+Ex:
+    Input: 1
+    Output: 31 days
+
+    Input: 2
+    Output: 28 days
+
+-------------------------------------------------
+Saim — 15/03/2021
+        /*
+        Analyze the following without intellij. Calculate the output step by step
+         */
+        int a = 5; // a = 6
+        int b = a++ + a-- + a * 2 + a + ++a;
+        //      5   + 6  +  5 * 2 + 5 + 6
+        //      5   + 6  +  10 + 5 + 6
+        //      11  +  10 + 5 + 6
+        //      21 + 5 + 6
+        //      26 + 6
+        //   b =  32
+        System.out.println("a- " + a);
+        System.out.println("b-  " + b);
+        ------------------------------------------------------------------------
+Saim — 15/03/2021
+        /*
+        Analyze the following without intellij. Calculate the output step by step
+            int a = 200;
+            int b = -a++ + - --a * a-- % 2 + a;
+        What is the value of a and b?
+         */
+
+        int a = 200;  // a = 199
+        int b = -a++ + - --a * a-- % 2 + a;
+        //     -200  + - 200 * 200 % 2 + 199
+        //     -200  + -40000 % 2 + 199
+        //     -200  + 0 + 199
+        //     -200  +  199
+        //      -1
+
+        System.out.println("a: " + a);
+        System.out.println("b: "+ b);
+        int a = 10;
+        int b = a - 5 * 2 + a / 2;
+        //      10 - 5 * 2 + 10 / 2
+        //      10 - 10 + 10 / 2
+        //      10 - 10 + 5
+        //      5
+        /*
+        Create a program that will accept a number and it will print if it is evenly divisible by 2, 3, and 5
+
+            Ex:
+            number = 65
+
+            Output:
+            65 is divisible by 2: false
+            65 is divisible by 3: false
+            65 is divisible by 5: true
+         */
+
+        int number = 65;
+        boolean by2 = number % 2 == 0;
+        boolean by3 = number % 3 == 0;
+        boolean by5 = number % 5 == 0;
+
+        System.out.println(number + " is divisible by 2: " + by2);
+        System.out.println(number + " is divisible by 3: " + by3);
+        System.out.println(number + " is divisible by 5: " + by5);
+
+==============================================================================================
+
+[Operators]
+
+Analyze the following without intellij. Calculate the output step by step
+
+    int a = 5; // 5
+    int b = a++ + a-- + a * 2 + a + ++a;
+
+What is the value of a and b?
+
+====================================================
+
+[Operators]
+
+Analyze the following without intellij. Calculate the output step by step
+
+    int a = 200;
+    int b = -a++ + - --a * a-- % 2 + a;
+
+What is the value of a and b?
+
+====================================================
+
+[Operators]
+
+Analyze the following without intellij. Calculate the output step by step
+
+int x = 300;
+int y = 400;
+int z = x + y - x * y + x / y;
+
+What is the value of x, y, and z?
+====================================================
+
+[Boolean expressions, operators]
+
+Create a program that will accept a number and it will print if it is evenly divisible by 2, 3, and 5
+
+Ex:
+number = 65
+
+Output:
+65 is divisible by 2: false
+65 is divisible by 3: false
+65 is divisible by 5: true
+
+====================================================
+
+[If statement, operators]
+
+Write a java program that can identify if a person is eligible to vote for the president. Age of voting: 18. Print "Eligible to vote" or "not eligible to vote".
+
+    => To make it dynamic change the three angles to be Scanner inputs
+
+====================================================
+
+[If statement, operators]
+
+Write a program that will accept a boolean value. Print out the opposite of the given boolean
+
+Ex: true -> false
+    false -> true
+
+====================================================
+====================================================
+
+[Triangle - If statement, operators]
+
+A triangle is valid if the sum of all the three angles is equal to 180 degrees. Write a program that declares three integers as angles and check whether the triangle is valid or not. Print "Valid triangle" or "Not a valid triangle".
+
+    => To make it dynamic change the three angles to be Scanner inputs
+
+====================================================
+
+[If statements, operators]
+
+Create a program that will accept a year. Check if the year is a leap year. If it is a leap year print "$year is a leap year" otherwise print "$year is not a leap year"
+
+Hint: Lets say if a number is evenly divisible by 4 it is a leap year
+
+====================================================
+
+[If statements, operators]
+
+Write a program that will accept your salary amount. Then also ask the user if they are full time or not (boolean). If they are fulltime add 20000 to their salary, but if they are part time then subtract 5000. Print the final salary.
+
+====================================================
+
+[If statements, operators]
+
+Write a program that will give the grade after the retake. The program should read a score of the test and which attempt it was.
+
+    If its the first attempt -> subtract 10%
+    If its the second attempt -> subtract 20%
+    If its the third attempt -> subtract 35%
+
+====================================================
+
+[Oxygen level - If statements, operators]
+
+You are diving in the ocean. Your oxygen tank has a certain level (number) and you must print a message based on the level
+x
+> Above 90 - Your tank is full
+> Above 80 - Still okay
+> Above 70 - Don't go too far
+> Above 60 - Start to head back
+> Above 50 - Be careful now you at at 50%
+
+====================================================
+[Movie duration]
+
+The length of the movie will determine how much it costs.
+Use a Scanner object to read the input from the user for how long the movie is and print
+out how much the movie will cost.
+The length will be given as a decimal as hours.minutes
+> 1.0 - 8.99
+> 1.5 - 10.50
+> 2.0 - 12.99
+> 2.5 - 14.50
+-> 3 or more - 15.99
+Saim — 10/03/2021
+package OfficeHours.Practice_03_10_2021;
+
+import java.util.Scanner;
+/*
+[Movie duration]
+
+The length of the movie will determine how much it costs.
+Use a Scanner object to read the input from the user for how long the movie is and print
+out how much the movie will cost.
+The length will be given as a decimal as hours.minutes
+> 1.0 - 8.99
+> 1.5 - 10.50
+> 2.0 - 12.99
+> 2.5 - 14.50
+-> 3 or more - 15.99
+
+ */
+
+public class MovieDuration {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the length of the movie");
+        double movieLength = input.nextDouble();
+
+
+        // = assignment
+        // == compare
+
+        if (movieLength == 1.0) {
+            System.out.println("Price: " + 8.99);
+        }
+
+        if(movieLength == 1.5) {
+            System.out.println("Price: " + 10.50);
+        }
+
+        if(movieLength == 2.0) {
+            System.out.println("Price: " + 12.99);
+        }
+
+        if(movieLength == 2.5) {
+            System.out.println("Price: " + 14.50);
+        }
+
+        if(movieLength >= 3.0) {
+            System.out.println("Price " + 15.99);
+        }
+
+
+    }
+
+}
+Saim — 10/03/2021
+package OfficeHours.Practice_03_10_2021;
+
+import java.util.Scanner;
+/*
+[Movie duration]
+
+The length of the movie will determine how much it costs.
+Use a Scanner object to read the input from the user for how long the movie is and print
+out how much the movie will cost.
+The length will be given as a decimal as hours.minutes
+> 1.0 - 8.99
+> 1.5 - 10.50
+> 2.0 - 12.99
+> 2.5 - 14.50
+-> 3 or more - 15.99
+
+ */
+
+public class MovieDuration2 {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the length of the movie");
+        double movieLength = input.nextDouble();
+        double price = 0;
+
+        // = assignment
+        // == compare
+
+        if (movieLength == 1.0) {
+            price = 8.99;
+        }
+
+        if(movieLength == 1.5) {
+            price = 10.50;
+        }
+
+        if(movieLength == 2.0) {
+            price = 12.99;
+        }
+
+        if(movieLength == 2.5) {
+           price = 14.50;
+        }
+
+        if(movieLength >= 3.0) {
+            price = 15.99;
+        }
+
+        if(movieLength <= 0) {
+            System.out.println("Invalid length");
+        } else {
+            System.out.println("Price: " + price);
+        }
+
+
+
+    }
+
+}
+[Season & Day length]
+
+The seasons will determine how long each day and night are.
+The season will be determined by a number:
+
+> 1 - Spring
+day: 14
+night: 10
+> 2 - Summer
+day: 16
+night: 8
+> 3- Fall
+day: 14
+night: 10
+> 4 - Winter
+day: 12
+night: 12
+Saim — 10/03/2021
+package OfficeHours.Practice_03_10_2021;
+
+    /*
+    [Season & Day length]
+
+    The seasons will determine how long each day and night are.
+    The season will be determined by a number:
+
+    > 1 - Spring
+    day: 14
+    night: 10
+    > 2 - Summer
+    day: 16
+    night: 8
+    > 3 - Fall
+    day: 14
+    night: 10
+    > 4 - Winter
+    day: 12
+    night: 12
+
+     */
+
+import java.util.Scanner;
+
+public class Seasons {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the seasons number:\n1-Spring\n2-Summer\n3-Fall\n4-Winter");
+        int season = scan.nextInt();
+        int day = 0;
+        int night = 0;
+        String seasonName = "";
+
+        if(season == 1) {
+            day = 14;
+            night = 10;
+            seasonName = "Spring";
+        }
+
+        if(season == 2) {
+            day = 16;
+            night = 8;
+            seasonName = "Summer";
+        }
+
+        if (season == 3) {
+            day = 14;
+            night = 10;
+            seasonName = "Fall";
+        }
+
+        if(season == 4) {
+            day = 12;
+            night = 12;
+            seasonName = "Winter";
+        }
+
+        System.out.println("In " + seasonName + " there is " + day + " hours of daylight and " + night + "  hours of nighttime");
+
+
+    }
+
+}
+==========================================================================
+
+Make a class Rectangle
+create a main method
+
+     - Declare two variables: length and width
+
+         - Calculate the Perimeter 2(l*w)
+         - Calculate the Area (w * l)
+
+     - Print properties of the Rectangle
+
+     - Modify to accept Scanner inputs
+
+2
+
+Saim — 08/03/2021
+package OfficeHours.Practice_03_08_2021;
+
+import java.util.Scanner;
+
+// PIC: Package -> Import -> Class
+
+/*
+
+Make a class Rectangle
+create a main method
+
+     - Declare two variables: length and width
+
+         - Calculate the Perimeter 2(l*w)
+         - Calculate the Area (w * l)
+
+     - Print properties of the Rectangle
+
+     - Modify to accept Scanner inputs
+
+ */
+
+public class Rectangle {
+
+    public static void main(String[] args) {
+
+        // Hard coded values
+//        double length = 5;
+//        double width = 3;
+
+        // dynamic with Scanner
+        Scanner input = new Scanner(System.in);
+        double length = input.nextDouble();
+        double width = input.nextDouble();
+
+        double perimeter = 2 * (length + width);
+        double area = length * width;
+
+        System.out.println("perimeter = " + perimeter);
+        System.out.println("area = " + area);
+
+    }
+
+}
+
+1
+
+Saim — 08/03/2021
+package OfficeHours.Practice_03_08_2021;
+
+public class CastingPractice {
+    public static void main(String[] args) {
+
+        // byte -> short -> int -> long -> float -> double
+
+        /*
+            by default whole numbers will be read as int datatype
+            by default decimal numbers will be read as double datatype
+         */
+
+
+        byte b = 10;
+        short s = b;
+        byte b2 = (byte)s;
+
+        double d = 5.3;
+        int i = (short)d; // int = [(short)double] -> int = short
+        int i2 = (int)d;
+        System.out.println(i); // 5
+        System.out.println((double)i); // 5.0
+
+        float f = 3.54f;
+        float f2 = (float)3.54; // float = double
+
+        float f3 = 5; // float = int -> 5.0
+        float f4 = 5.5F; // float = double
+
+        long l = 22313; // long = int
+        long l2 = 312312313323L;
+       // long l3 = (long)312312313323; -> doesn't work because the number is too big for int, next get to cast
+
+        System.out.println(l);
+        System.out.println((double)l);
+        System.out.println((float)l);
+        System.out.println(l2);
+
+        double million = 1_000_000;
+        System.out.println(million);
+
+    }
+}
+===========================================================================================
+Sample Zoo solution
+public class Zoo {
+
+    public static void main(String[] args) {
+
+        String name = "Brookfield Zoo", foundedDate = "March 3, 2021", startTime = "7:00 AM", closingTime = "5:00 PM";
+        boolean isOpenOnHolidays = true, hasAquarium = false;
+        int numberOfBigCats = 10, numberOfHoofedAnimals = 15, numberOfReptiles = 20, numberOfBirds = 20, numberOfPrimates = 10, numberOfEmployees = 50;
+        double ticketCostForAdults = 13.99, ticketCostForUnder13 = 9.99;
+        String parkRules = "No eating or drinking outside of designated areas\n" + "No flash photography\nNo Feeding the animals\nNo extensive perfumes";
+
+
+        System.out.println("\t\tCome to " + name + "!");
+        System.out.println("We were founded on " + foundedDate);
+        System.out.println("Our operating hours are from " + startTime + " to " + closingTime);
+        System.out.println("We are open on holidays: " + isOpenOnHolidays);
+        System.out.println("We have an Aquarium: " + hasAquarium);
+        System.out.println("\n\t\tFEATURED ANIMALS:");
+        System.out.println("Number of Big Cats: " + numberOfBigCats);
+        System.out.println("Number of Hoofed Animals: " + numberOfHoofedAnimals);
+        System.out.println("Number of Reptiles: " + numberOfReptiles);
+        System.out.println("Number of Birds: " + numberOfBirds);
+        System.out.println("Number of Primates: " + numberOfPrimates);
+        System.out.println("\nAll of our animals are taken care of by our " + numberOfEmployees + " dedicated Employees");
+        System.out.println("\n\t\tOUR PRICES:");
+        System.out.println("Price for adults: $" + ticketCostForAdults);
+        System.out.println("Price for anyone under 13: $" + ticketCostForUnder13);
+        System.out.println("\n\t\tOUR RULES:\n" + parkRules);
+
+    }
+}
+Sample Employee solution
+public class Employee {
+
+    public static void main(String[] args) {
+
+        String firstName = "James";
+        String lastName = "Bond";
+        String companyName = "Tesla";
+        double salary = 100000;
+        byte startDay = 4;
+        String startMonth = "January";
+        short startYear = 2021;
+        boolean isFullTime = true;
+        String jobTitle = "SDET";
+        String officeAddress = "100 S LaneHampton, VA 13312";
+
+
+        // Use previous variables together
+
+        String fullName = firstName + " " + lastName;
+        String fullStartDate = startMonth + " " + startDay + "," + startYear;
+        String email = firstName + startDay + "@" + companyName + ".com";
+        double salaryAfter3years = salary + (startDay * 1000);
+
+
+        System.out.println("\t***** " + companyName +  " New Hire Information *****");
+        System.out.println(firstName + " welcome to " + companyName);
+        System.out.println("Your start date as a " + jobTitle + " will be on " + fullStartDate);
+        System.out.println("You are fulltime: " + isFullTime + " and will he making " + salary + " per year");
+        System.out.println("The office is located at: \n" + officeAddress);
+        System.out.println("\n\tOfficial information:");
+        System.out.println("New hire name: " + fullName);
+        System.out.println("Starts on: " + fullStartDate);
+        System.out.println("Email generated: " + email);
+        System.out.println("Your expected salary after 3 years: " + salaryAfter3years);
+
+    }
+
+}
+@student Practice task
+create a class named Apartment
+create a main method
+
+    Create the variables with the most appropriate datatype:
+
+        - address, name of owner, number of units, average size of each unit, monthly rent amount, number of washers and driers, allows pets or not, has a pool, length of lease, total number of residents in building, phone number of owner, is near a gas station, number of floors, has a basement, has available units for rent, has air conditioning, number of parking spaces, has wheel chair access, number of review stars (out of 5)
+
+        - Create these variables and use previous variables to get the values
+
+            - monthly rent after 3 years (discount 10% off original rent)
+            - monthly rent after 6 years (discount 20% off original rent)
+            - Average number of residents per unit (total residents / number of units)
+            - Average number of parking spots per unit ( parking spots / units)
+            - Average number of units per floor ( units / number of floors)
+
+======================================================================================================================
+
+Concatination, Arithmetic operators,
+================================================
+
+Make a class AgeToDays
+create a main method
+
+    - Declare two int variables: age and age in days
+
+    - Use a base of 365 days in a year
+
+    - Calculate and display:
+        You are $age years old! That means you are $days days old
+
+2
+[18:07]
+package OfficeHours.Practice_03_03_2021;
+
+public class ConcatExample {
+
+    public static void main (String [] args) {
+
+        System.out.println("1" + "2" + "3"); // 123
+        System.out.println(1 + 2 + 3); // 6
+        System.out.println(1 + 2 + "3"); // 33
+        System.out.println("1" + 2 + 3); // 123
+        System.out.println("1" + (2 + 3)); // 15
+
+
+    }
+
+}
+
+1
+
+Saim — 03/03/2021
+Make a class Stage1Calculator
+create a main method
+
+    - Declare two double variables
+    - Declare 5 more double variables for each operation.
+        > Execute all the operation between the first two numbers
+    - Print out operations
+        Ex: if the nums are 5 and 10
+            5 + 10 = 15
+            5 - 10 = -5
+            etc..
+
+Saim — 03/03/2021
+package OfficeHours.Practice_03_03_2021;
+
+/*
+Make a class Stage1Calculator
+create a main method
+
+    - Declare two double variables
+    - Declare 5 more double variables for each operation.
+        > Execute all the operation between the first two numbers
+    - Print out operations
+        Ex: if the nums are 5 and 10
+            5 + 10 = 15
+            5 - 10 = -5
+            etc..
+ */
+
+public class Stage1Calculator {
+
+    public static void main (String [] args) {
+
+        double numOne = 3.0;
+        double numTwo = 10.0;
+
+        double addition = numOne + numTwo;
+        double subtraction = numOne - numTwo;
+        double multiplication = numOne * numTwo;
+        double division = numOne / numTwo;
+        double remainder = numOne % numTwo;
+
+        System.out.println("Calculation for " + numOne + " & " + numTwo);
+        System.out.println(numOne + " + " + numTwo + " = " +  addition);
+        System.out.println(numOne + " - " + numTwo + " = " +  subtraction);
+        System.out.println(numOne + " * " + numTwo + " = " +  multiplication);
+        System.out.println(numOne + " / " + numTwo + " = " +  division);
+        System.out.println(numOne + " % " + numTwo + " = " +  remainder);
+
+        // Print without variables
+
+        System.out.println("Calculation for " + numOne + " & " + numTwo);
+        System.out.println(numOne + " + " + numTwo + " = " + (numOne + numTwo));
+        System.out.println(numOne + " - " + numTwo + " = " +  (numOne - numTwo));
+        System.out.println(numOne + " * " + numTwo + " = " +  (numOne * numTwo));
+        System.out.println(numOne + " / " + numTwo + " = " +  (numOne / numTwo));
+        System.out.println(numOne + " % " + numTwo + " = " +  (numOne % numTwo));
+
+
+    }
+    // byte -> short -> int > long > float > double
+}
+===========================================================================================
+
+1) Create a class House
+    create a main method
+
+    - Each the datatype you feel is most appropriate for each variable.
+
+    - Create the following variables:
+        house type, number of bedrooms, number of bathrooms, number of kitchens, is there a basement?, is there an attic, is there a pool, is the house for sale?, cost of the house, address, zipcode, is a park near by, Rating of surrounding school districts (out of 5),
+
+    - Print each variable with a message with the value
+        Ex: The number of bedrooms is: 4
+            The number of bathrooms is: 3
+
+==============================================================================
+
+2) Create a class Movie
+    create a main method
+
+    - Each the datatype you feel is most appropriate for each variable.
+
+    - Create the following variables:
+        name, genre, duration, release date, rating(G, PG, R, etc..), is a sequels or not, rotten tomatoes rating (out of 100), is on dvd.
+
+    - Print out the Movie information using concatenations and print statements
+
+    ------ Welcome to the Cinema ------
+
+    Tonight we are streaming "$movieName" which was released on $releaseDate
+    This $genre movie got a $rottenTomatoesRating rating on Rotten Tomatoes.
+    The rating is $rating and it runs for $duration hours.
+    This is a sequel $isSequel and is on dvd $isOnDvd.
+
+45
+
+23
+
+17
+
+6
+
+12
+
+35
+
+3
+
+4
+
+4
+
+8
+
+1
+2 March 2021
+
+Saim — 02/03/2021
+Create a class named Computer
+create a main method
+
+    - Create variables with most appropriate datatypes:
+
+        - brand, processor, ram memory, storage memory, has monitor, has wifi card, description, price, cpu, color, number of monitors, number of usb slots, has usb 3.0
+
+        - Print out all the variables and values of the computer
+(edited)
+
+43
+
+1
+
+1
+
+6
+[13:39]
+@student here is a task you can work on, I will share the tasks we will go through in office hours later as well so you can try them yourself beforehand(edited)
+
+18
+
+1
+
+1
+
+Saim — 02/03/2021
+Printing, variables, datatypes, concatenation
+================================================
+
+Make a class PersonInfo
+make a main method
+
+Create variables and give value related to you:
+
+    - String name
+    - byte age
+    - char gender
+    - boolean student
+    - short number of siblings
+    - long favorite number
+    - int number of seasons in your area
+    - double birth date: (month.day)
+    - int year
+    - String full birthday date with year
+    - String favorite quote
+
+    - Print the person information
+====================================================
+
+Make a class Zoo
+make a main method
+
+Create variables and give some values
+
+    - For this one, pick which datatype you think is best for each variable
+
+    - name, founded date, starting time, closing time, open on holidays, has aquarium section, number of big cats, number of hoofed animals, number of reptiles, number of birds, number of primates, number of employees, ticket cost for adults, ticket cost for under 13, park rules,
+
+    - Make a brochure of the zoo's information.
+
+====================================================

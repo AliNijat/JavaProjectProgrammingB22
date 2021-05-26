@@ -1,0 +1,20 @@
+package Day24_Loop_Intro;
+
+public class YouYubeCatVideo {
+    public static void main(String[] args) throws InterruptedException {
+
+        System.out.println("starting: World's smallest cat \uD83D\uDC08- BBC");
+        int seconds = 0;
+
+        while ( seconds <= 117){
+            System.out.println("Watching \uD83D\uDC08 at second: " + seconds);
+            seconds ++;
+            Thread.sleep(1000);
+        }
+        System.out.println("Watching \uD83D\uDC08 at second: " + seconds);
+
+
+
+
+    }
+}
