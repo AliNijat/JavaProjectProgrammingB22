@@ -39,5 +39,7 @@ public class RemoveDuplicate {
     public static ArrayList<Integer> removeDup2 (ArrayList<Integer> list){
         list.removeIf(e -> Collections.frequency(list, e) > 1);
         return list;
+
+        // i added this to
     }
 }
