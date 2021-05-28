@@ -13,6 +13,25 @@ public class Address {
     private int zipCode ;
     private String country ;
 
+    public Address(){
+        System.out.println("Address constructor");
+        street = "123 papajan foxily";
+        city = "Java";
+        state = "KojaAbad";
+        zipCode = 20223;
+        country = "world";
+
+    }
+
+    public Address(String street, String city, String state, int zipCode, String country){
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.country = country;
+        System.out.println("New constructor method with parameters");
+    }
+
     public String getStreet() {
         return street;
     }
@@ -55,12 +74,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
-                "street='" + street + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", country='" + country + '\'' +
-                '}';
+        return street +" " + zipCode +", " + city + ", " + state + " " + country;
     }
 }
