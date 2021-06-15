@@ -2,18 +2,13 @@ package Day47_constructors;
 
 public class Address {
 
-//    String street = "3847 barrel cooper";
-//    String city = "Reston";
-//    String state = "Virginia";
-//    String zipCode = "20220";
-//    String country = "USA";String street = "3847 barrel cooper";
     private String street;
-    private String city ;
-    private String state ;
-    private int zipCode ;
-    private String country ;
+    private String city;
+    private String state;
+    private int zipCode;
+    private String country;
 
-    public Address(){
+    public Address() {
         System.out.println("Address constructor");
         street = "123 papajan foxily";
         city = "Java";
@@ -23,7 +18,7 @@ public class Address {
 
     }
 
-    public Address(String street, String city, String state, int zipCode, String country){
+    public Address(String street, String city, String state, int zipCode, String country) {
         this.street = street;
         this.city = city;
         this.state = state;
@@ -74,6 +69,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return street +" " + zipCode +", " + city + ", " + state + " " + country;
+        return street + " " + zipCode + ", " + city + ", " + state + " " + country;
     }
 }
