@@ -8,20 +8,19 @@ public class Person {
     char gender;
 
     // Behavior -> Method
-    public void speak(){
+    public void speak() {
         System.out.println("Person is speaking!");
     }
-
 }
 
-class People{ // for running the codes
+class People { // for running the codes
     public static void main(String[] args) {
 
         // crate object of Person class -  Instantiate class
         Person person1 = new Person();
         person1.firstName = "Ali";
         person1.age = 31;
-        person1.gender = 'F';
+        person1.gender = 'M';
         person1.speak();
 
         System.out.println("person1 firstName = " + person1.firstName);

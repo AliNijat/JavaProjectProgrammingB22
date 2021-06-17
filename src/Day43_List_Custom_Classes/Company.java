@@ -12,12 +12,17 @@ public class Company {
 
         System.out.println();
 
+        String myName = "Alinijat";
+
         Employee employee2 = new Employee();
         employee2.name = "Mohammad";
         employee2.jobTitle = "Engineer";
         employee2.work();
         System.out.println("employee2 name = " + employee2.name);
         System.out.println("employee2 jobTitle = " + employee2.jobTitle);
+
+        System.out.println();
+        System.out.println(employee2.name = myName);
 
     }
 }
