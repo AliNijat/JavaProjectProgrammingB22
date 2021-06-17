@@ -10,14 +10,17 @@ public class TrafficLightObject {
 
         //System.out.println("trafficLight = " + trafficLight);
         trafficLight.showColor();
+        trafficLight.action();
 
         trafficLight.changeColor("green");
         trafficLight.showColor();
+        trafficLight.action();
 
         TrafficLight trafficLight1 = new TrafficLight();
-        trafficLight.changeColor("black");
+        trafficLight1.changeColor("black");
 
-        trafficLight.showColor();
+        trafficLight1.showColor();
+        trafficLight1.action();
 
 
     }

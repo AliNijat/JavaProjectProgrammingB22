@@ -15,7 +15,20 @@ public class TrafficLight {
             System.out.println("changing color to " + newColor);
             color = newColor;
         }else {
+            color = newColor;
             System.out.println("ERROR: invalid color " + newColor);
+        }
+    }
+
+    public  void action(){
+        if (color.equalsIgnoreCase("green")){
+            System.out.println("Go...!!!");
+        }else if (color.equalsIgnoreCase("Yellow")) {
+            System.out.println("Prepare for stop!");
+        }else if (color.equalsIgnoreCase("red")){
+            System.out.println("Stop!!!");
+        }else {
+            System.out.println("Move carefully, lights broken!!!");
         }
     }
 }
