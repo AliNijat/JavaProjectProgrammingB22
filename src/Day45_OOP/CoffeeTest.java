@@ -6,25 +6,28 @@ public class CoffeeTest {
         Coffee myCoffee = new Coffee();
         System.out.println("coffee amount = " + myCoffee.getAmount());
         myCoffee.refill();
-        System.out.println("myCoffee after refill = " + myCoffee.getAmount());
+        System.out.println("amount after refill = " + myCoffee.getAmount());
         myCoffee.drink(20);
-        System.out.println("myCoffee after drink 20 = " + myCoffee.getAmount());
+        System.out.println("amount after drink 20% = " + myCoffee.getAmount());
 
         myCoffee.setType("Turkish coffee");
         System.out.println("myCoffee after select type = " + myCoffee.getType());
 
         System.out.println();
-        System.out.println("myCoffee.toString() = " + myCoffee.toString());
+        System.out.println("myCoffee.toString() = " + myCoffee);
 
         Coffee myCoffee1 = new Coffee();
         myCoffee1.setType("Cappuccino");
         Coffee myCoffee2 = myCoffee1;
-        System.out.println("myCoffee1 type = " + myCoffee1.getType());
+        System.out.println("my new Coffee type1 = " + myCoffee1.getType());
         myCoffee2.setType("Espresso");
-        System.out.println("myCoffee2 type = " + myCoffee2.getType());
+        System.out.println("my new Coffee type2 = " + myCoffee2.getType());
 
         Coffee myCoffee3 = new Coffee();
         myCoffee3.setType("Frappucino");
-        System.out.println("myCoffee3 type = " + myCoffee3.getType());
+        System.out.println("my new Coffee type3 = " + myCoffee3.getType());
+
+       // Coffee coffee4 = null; // NullPointerException
+        //coffee4.setType("Turkish");
     }
 }

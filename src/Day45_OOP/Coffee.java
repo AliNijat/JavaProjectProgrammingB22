@@ -32,9 +32,9 @@ public class Coffee {
 
     @Override
     public String toString() {
-        return "Coffee{" +
-                "amount=" + amount +
-                ", type='" + type + '\'' +
+        return "Coffee: " +
+                "amount = " + amount + "%"+
+                ", type = '" + type + '\'' +
                 '}';
     }
 }
