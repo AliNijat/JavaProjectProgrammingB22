@@ -8,7 +8,8 @@ public class CheckingAccount {
     private String type = "checking";
 
 
-    // right click > generate > getter and setter >
+
+    // right click > generate > getter and setter > select all > Ok
     public String getAccountHolderName() {
         return accountHolderName;
     }

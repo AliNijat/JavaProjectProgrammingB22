@@ -64,7 +64,8 @@ public class CustomerInfo {
             System.out.println(customerList.get(i));
         }
 
-        customerList.forEach(each -> System.out.println(each.getName()));
+        customerList.forEach(each -> System.out.print(each.getName() + ", "));
+        System.out.println();
         customerList.forEach(each -> System.out.println(each.getId()));
     }
 }

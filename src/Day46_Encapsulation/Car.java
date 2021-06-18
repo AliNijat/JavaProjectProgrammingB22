@@ -12,6 +12,7 @@ public class Car {
     }
 
     // getter method for make
+    // the setterMethods Parameter's name is same as instance variable we need to use this.
     public String getMake() {
         return make;
     }
