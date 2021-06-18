@@ -28,9 +28,11 @@ public class CybertekGroups {
         //check if someone is in list but not in our group member then remove
         if (group1.getMembers().contains("Pavel")) {
             System.out.println("One bug found [" + group1.getMembers().get(1) + "] and Removed");
+            group1.removeMember("Pavel");
         } else {
             System.out.println("No bugs are found!!!");
         }
+        System.out.println(group1);
 
 
         Group group2 = new Group("CyberCats");

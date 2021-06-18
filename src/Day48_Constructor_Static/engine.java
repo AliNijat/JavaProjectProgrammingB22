@@ -1,7 +1,7 @@
 package Day48_Constructor_Static;
 
 public class engine {
-    int cylinders;
+    private int cylinders;
 
     public engine(){
 

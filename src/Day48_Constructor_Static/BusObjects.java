@@ -10,6 +10,10 @@ public class BusObjects {
         System.out.println(bus);
 
         Bus metroBus = new Bus();
+        metroBus.driver = new driver("Aziz");
+        metroBus.engine = new engine(15);
+
+        System.out.println(metroBus);
 
 
 
