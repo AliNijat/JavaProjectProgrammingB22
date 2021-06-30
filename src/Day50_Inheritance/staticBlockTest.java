@@ -9,5 +9,9 @@ public class staticBlockTest {
 
         System.out.println("nObject = "  + nObject2.num);
 
+        staticBlockDemo nObject3 = new staticBlockDemo(50);
+        System.out.println("nObject3 = " + staticBlockDemo.num);
+
+
     }
 }
