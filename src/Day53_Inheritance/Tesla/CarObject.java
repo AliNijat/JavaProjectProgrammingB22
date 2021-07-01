@@ -19,7 +19,11 @@ public class CarObject {
             System.out.println("Purchasing " + car1);
         }
 
+        System.out.println(car1.getCount());
+
         System.out.println();
+
+        ElectricCar car2 = new ElectricCar("Tesla", "CyberTruck", 1000794.874, 2022, 300);
 
         car1.setMake("BMW");
         car1.setModel("SeriesC");
