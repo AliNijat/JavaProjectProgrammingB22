@@ -1,6 +1,8 @@
 package Day50_Inheritance;
 
 public class staticBlockDemo {
+
+
     static  int num;
     static {
         System.out.println("static initializer block");
@@ -18,6 +20,7 @@ public class staticBlockDemo {
     }
 
     public staticBlockDemo(int n){
+        num += n;
         System.out.println("Overloaded class");
     }
 }
