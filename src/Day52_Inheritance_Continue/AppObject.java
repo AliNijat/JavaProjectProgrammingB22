@@ -4,25 +4,27 @@ public class AppObject {
     public static void main(String[] args) {
 
         MobileApp mobileApp = new MobileApp();
-        mobileApp.name = "Facebook";
+        mobileApp.setName("Facebook");
         mobileApp.useTheApp(20);
-        mobileApp.version = 2.3;
-        System.out.println("Version: " + mobileApp.version);
+        mobileApp.setVersion(2.3);
+        //System.out.println("Version: " + mobileApp.setVersion(2.3));
 
         System.out.println();
 
         Instagram instagram = new Instagram();
-        instagram.name = "Instagram";
-        instagram.version = 4.9;
+        instagram.setName("Instagram");
+        instagram.setVersion(4.9);
         instagram.useTheApp(30);
 
         System.out.println();
 
         Discord discord = new Discord();
-        discord.name = "Discord";
-        discord.version = 3.10;
+        discord.setName("Discord");
+        discord.setVersion(3.10);
         discord.download();
         discord.useTheApp(40);
         discord.chat("Nijat");
+        System.out.println();
+        discord.printInfo();
     }
 }

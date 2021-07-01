@@ -9,7 +9,7 @@ public class Discord extends MobileApp {
 
     @Override
     protected boolean download(){
-        System.out.println("Discord version " + version + " is downloaded");
+        System.out.println("Discord version is downloaded");
         return true;
     }
 
@@ -17,5 +17,10 @@ public class Discord extends MobileApp {
     public void useTheApp(int minutes){
         super.useTheApp(minutes);
         chat("Ali");
+    }
+
+    public void printInfo(){
+        System.out.println("App name = " + getName());
+        System.out.println("App version = " + getVersion());
     }
 }
