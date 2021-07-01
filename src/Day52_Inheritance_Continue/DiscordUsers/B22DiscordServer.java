@@ -18,5 +18,11 @@ public class B22DiscordServer {
         admin.setId(43233);
         System.out.println(admin);
 
+        System.out.println();
+
+        Admin admin1 = new Admin( "Gullia", 4445);
+        System.out.println(admin1);
+
+
     }
 }
