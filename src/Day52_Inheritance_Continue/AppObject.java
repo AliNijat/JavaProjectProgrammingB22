@@ -21,6 +21,7 @@ public class AppObject {
         Discord discord = new Discord();
         discord.name = "Discord";
         discord.version = 3.10;
+        discord.download();
         discord.useTheApp(40);
         discord.chat("Nijat");
     }

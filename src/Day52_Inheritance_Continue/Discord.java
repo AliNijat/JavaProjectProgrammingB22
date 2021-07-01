@@ -8,6 +8,12 @@ public class Discord extends MobileApp {
     }
 
     @Override
+    protected boolean download(){
+        System.out.println("Discord version " + version + " is downloaded");
+        return true;
+    }
+
+    @Override
     public void useTheApp(int minutes){
         super.useTheApp(minutes);
         chat("Ali");
