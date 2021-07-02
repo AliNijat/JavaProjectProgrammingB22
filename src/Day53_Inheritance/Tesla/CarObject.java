@@ -34,5 +34,12 @@ public class CarObject {
         System.out.println(roadster);
         System.out.println("Count = " + roadster.getCount());
 
+        System.out.println();
+
+        SolarRoof solarRoof = new SolarRoof(89450.99, 2022, 120);
+        solarRoof.drive(20);
+        System.out.println(solarRoof);
+        System.out.println("Count = " + solarRoof.getCount());
+
     }
 }

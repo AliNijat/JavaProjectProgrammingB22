@@ -37,7 +37,7 @@ public class ElectricCar {
         return "ElectricCar {" +
                 "make = '" + make + '\'' +
                 ", model = '" + model + '\'' +
-                ", price = " + price +
+                ", price = $" + price +
                 ", year = " + year +
                 ", range = " + range +
                 '}';
