@@ -8,6 +8,6 @@ public class pizza extends MenuItem{
 
     }
     public void serve(){
-        System.out.println("Put into bowl, and serve with mounth");
+        System.out.println("Put into bowl, and serve with mount");
     }
 }
