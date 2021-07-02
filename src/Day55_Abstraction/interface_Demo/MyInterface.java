@@ -6,10 +6,9 @@ public interface MyInterface {
 }
 
 interface MyInterface2{
-
 }
 
-class MyClass implements MyInterface {
+class MyClass implements MyInterface, MyInterface2 {
 
     @Override
     public void learn() {
@@ -20,7 +19,7 @@ class MyClass implements MyInterface {
 class Main {
     public static void main(String[] args) {
 
+        // MyInterface myInterface = new MyInterface();
         MyClass myClass = new MyClass();
-
     }
 }
