@@ -7,6 +7,12 @@ public class Swimming extends Exercise {
         System.out.println("Performing swimming in a pool or ocean");
     }
 
+    /**
+     *
+     * @param minutes - how long is exercise is performed
+     * @return 
+     */
+
     @Override
     public int getCaloriesCount(int minutes) {
         return minutes * 11;
