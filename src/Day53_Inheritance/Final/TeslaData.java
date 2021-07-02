@@ -2,8 +2,8 @@ package Day53_Inheritance.Final;
 
 public final class TeslaData {
 
-    // TeslaData class that has al ist of constants
-    // Values of below variables cannot be changed anywhere
+    // TODO >> TeslaData class that has al ist of constants
+    // TODO >> Values of below variables cannot be changed anywhere
 
     public static final String ADMIN_USERNAME = "Admin";
     public static final String ADMIN_PASSWORD = "password1234";
