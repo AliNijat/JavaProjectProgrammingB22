@@ -19,15 +19,20 @@ public class CarObject {
             System.out.println("Purchasing " + car1);
         }
 
-        System.out.println(car1.getCount());
+        System.out.println("Count = " + car1.getCount());
 
         System.out.println();
 
         ElectricCar car2 = new ElectricCar("Tesla", "CyberTruck", 1000794.874, 2022, 300);
+        System.out.println(car2);
+        System.out.println("Count = " + car2.getCount());
 
-        car1.setMake("BMW");
-        car1.setModel("SeriesC");
-        System.out.println(car1);
+        System.out.println();
+
+        Roadster roadster = new Roadster();
+        roadster.drive(1000);
+        System.out.println(roadster);
+        System.out.println("Count = " + roadster.getCount());
 
     }
 }

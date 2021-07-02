@@ -2,8 +2,7 @@ package Day53_Inheritance.Tesla;
 
 public class Roadster extends ElectricCar{
 
-
-    public Roadster(String make, String model, double price, int year, int range) {
-        super(make, model, price, year, range);
+    public Roadster(){
+        super("Tesla", "Roadster", 34010.99, 2022, 300);
     }
 }
