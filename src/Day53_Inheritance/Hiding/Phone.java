@@ -4,6 +4,7 @@ public class Phone {
 
     String type = "Old school phone";
 
+    // Method hiding ...
     public static  void use(){
         System.out.println("Using the phone");
     }

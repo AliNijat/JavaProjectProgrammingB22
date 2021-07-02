@@ -11,4 +11,10 @@ public class Mobile extends Phone{
         use();
         System.out.println("and sending a text message");
     }
+
+    @Override
+    public void call(){
+        use();
+        System.out.println("and calling on mobile");
+    }
 }
