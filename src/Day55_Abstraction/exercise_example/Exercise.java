@@ -13,7 +13,7 @@ public abstract class Exercise {
     public abstract void perform();
 
     /**
-     * another abstract method that concrete sub classes will override/imlement
+     * another abstract method that concrete sub classes will override/implement
      * @param minutes - how long is exercise is performed
      * @return number of calories burned/used
      */
