@@ -10,6 +10,6 @@ public class Father {
     }
 
     public void playWithKid(){
-        System.out.println("Father is playing with kid");
+        System.out.println("Father is playing with his kid");
     }
 }

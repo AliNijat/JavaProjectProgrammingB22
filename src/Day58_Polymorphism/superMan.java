@@ -10,7 +10,7 @@ public class superMan extends Father implements Worker{
 
     @Override
     public double getPaid() {
-        System.out.print("Super man is getting paid \n$");
+        System.out.println("Super man is getting paid \n$");
         return 1000;
     }
 }

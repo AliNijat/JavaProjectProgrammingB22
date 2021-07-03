@@ -7,6 +7,12 @@ public class Casting {
         worker.work("Tester");
         worker.getPaid();
 
+        // Cating
+        ((Father)worker).playWithKid();
+        ((superMan)worker).getPaid();
+
+
+
 
     }
 }

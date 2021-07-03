@@ -12,12 +12,16 @@ public class SuperMan_Test {
 
         Worker sdet2 = new superMan();
         sdet2.getPaid();
+
+        // Casting from one class another
+        ((Father)sdet2).playWithKid();
+        ((superMan)sdet2).getPaid();
         sdet2.work("Tester");
 
         System.out.println();
 
         superMan sdet3 = new superMan();
-        System.out.println(sdet3.getPaid());
+        sdet3.getPaid();
         sdet3.work("Tester");
         sdet3.feedKid();
         sdet3.raiseKid();
