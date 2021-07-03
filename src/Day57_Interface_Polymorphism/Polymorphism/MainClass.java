@@ -1,10 +1,15 @@
 package Day57_Interface_Polymorphism.Polymorphism;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainClass {
     public static void main(String[] args) {
 
         Animal animal = new Animal(); // Not polymorphism
         animal.makeNoise();
+
+        System.out.println();
 
         // TODO ->> Polymorphism way, which Data type and object type is different
         Animal animal1 = new Dog();
@@ -20,6 +25,14 @@ public class MainClass {
 
         Horse horse = new Horse();//Okay
 
+        System.out.println();
+
+        List<Animal> listOfAnimal = new ArrayList<>();
+        listOfAnimal.add(new Dog());
+        listOfAnimal.add(new Horse());
+        listOfAnimal.add(new Cat());
+
+        System.out.println(listOfAnimal);
 
 
     }
