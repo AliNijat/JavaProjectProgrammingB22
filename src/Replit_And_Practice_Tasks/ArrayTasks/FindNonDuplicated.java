@@ -10,8 +10,8 @@ public class FindNonDuplicated {
         for (int i = 0; i < nums.length; i++) {
             nonDuplicate = 0;
             for (int j = 0; j < nums.length; j++) {
-                if (nums[i] == nums[i]) {
-                    nonDuplicate = nums[j];
+                if (nums[j] != nums[i]) {
+                    nonDuplicate = nums[i];
                 }
             }
 
